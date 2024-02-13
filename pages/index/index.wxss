@@ -1,0 +1,39 @@
+/**index.wxss**/
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page_title{
+  text-align: center;
+}
+
+.mobile{
+  align-items: center;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.mobile_label {
+  font-size: 18px;
+  position: relative;
+  top: 3px;
+}
+
+.mobile_input{
+  margin-left: 85px; 
+  margin-top: -22px; 
+  width: 150px; height: 30px;  
+  border-radius: 20rpx; 
+  background-color: whitesmoke;
+  text-align: center;
+}
+
+.login{
+  margin-top: 10px;
+}
+
+.login_button{
+  
+}
