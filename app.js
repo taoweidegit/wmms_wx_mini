@@ -1,8 +1,9 @@
 // app.js
 App({
   onLaunch() {
-    globalData: {
-      token: '';
-    }
+    
+  },
+  globalData: {
+    user_rank: 8
   }
 })

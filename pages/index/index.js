@@ -3,7 +3,7 @@
 Page({
   data: {
     employee: '',
-    is_bind: false
+    is_success_wx_login: false
   },
   onLoad(){
     // 页面加载时，自动获取微信Id，若已完成绑定，页面自动跳转
@@ -15,7 +15,7 @@ Page({
       success: (result) => {
         wx.request({
           method: 'GET',
-          url: 'http://116.198.36.208:5000/wx/login',
+          url: 'https://116.198.36.208:5000/wx/login',
           data: {
             'code': result.code,
             'employee': this.data.employee
@@ -23,7 +23,18 @@ Page({
           success: (result) => {
             console.log(result.code)
             if (result.code == 200)
-              this.data.is_bind=true;
+            {
+              wx.showToast({
+                title: '绑定成功',
+              })
+              this.data.is_success_wx_login = true
+              let app = getApp()
+              app.globalData.user_rank = result.rank
+            }
+            else if (result.code == 404)
+              wx.showToast({
+                title: '工号请求错误',
+              })
             else if (result.code == 500)
               wx.showToast({
                 title: '请求错误',
@@ -34,16 +45,20 @@ Page({
       fail: (err) => {
         console.log(err.errMsg)
       },
-      complete: (res) => {},
+      complete: (res) => {
+        if (this.data.is_success_wx_login)
+        {
+          // 跳转登录成功页面
+          wx.redirectTo({
+            url: 'url',
+          })
+        }
+      },
     })
   },
   login(e){
     // 第一次将工号与微信进行绑定
     this.wx_login();
-    if (this.data.is_bind)
-      wx.showToast({
-        title: '绑定成功',
-      })
   },
   bindKeyInput(e){
     this.setData({
