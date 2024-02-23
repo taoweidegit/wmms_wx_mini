@@ -9,19 +9,19 @@ page {
   text-align: center;
 }
 
-.mobile{
+.employee{
   align-items: center;
   margin-left: 50px;
   margin-top: 20px;
 }
 
-.mobile_label {
+.employee_label {
   font-size: 18px;
   position: relative;
   top: 3px;
 }
 
-.mobile_input{
+.employee_input{
   margin-left: 85px; 
   margin-top: -22px; 
   width: 150px; height: 30px;  

@@ -1,8 +1,8 @@
 <text class="page_title">登录</text>
 <scroll-view>
-  <view class="mobile">
-    <text class="mobile_label">工号：</text>
-    <input class="mobile_input" maxlength="6" type="number" auto-focus placeholder="工号" bindinput="bindKeyInput" />
+  <view class="employee">
+    <text class="employee_label">工号：</text>
+    <input class="employee_input" maxlength="6" type="number" auto-focus placeholder="工号" bindinput="bindEidInput" />
   </view>
   <view class="login">
     <button type="primary" class="login_button" bind:tap="login">登录</button>
