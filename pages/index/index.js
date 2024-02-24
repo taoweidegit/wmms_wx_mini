@@ -30,11 +30,9 @@ Page({
               wx.showToast({
                 title: '绑定成功',
               })
-              let app = getApp()
-              app.globalData.user_rank = result.rank
               setTimeout(function(){ 
                 wx.redirectTo({
-                  url: '../login_success/login_success',
+                  url: '../login_success/login_success?eid=' + result.data.eid,
                 })
               }, 1500); 
             }

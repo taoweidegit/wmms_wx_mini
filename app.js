@@ -4,6 +4,5 @@ App({
     
   },
   globalData: {
-    user_rank: 8
   }
 })

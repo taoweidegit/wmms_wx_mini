@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/login_success/login_success"
+    "pages/login_success/login_success",
+    "pages/verification/verification",
+    "pages/outstock/outstock"
   ],
   "window": {
     "navigationBarTextStyle": "black",

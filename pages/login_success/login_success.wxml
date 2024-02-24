@@ -1,2 +1,2 @@
-<!--pages/login_success.wxml-->
-<text>pages/login_success.wxml</text>
+<!--pages/login_success/login_success.wxml-->
+<text class="page_title">导航</text>

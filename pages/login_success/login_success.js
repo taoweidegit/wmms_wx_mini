@@ -1,66 +1,52 @@
-// pages/login_success.js
+// pages/login_success/login_success.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad(options) {
-
+    this.custom_login(options.eid)
+    let access_token = wx.getStorageSync('access_token')
+    this.get_rank(access_token)
+    let rank = wx.getStorageSync('rank')
+    console.log(rank)
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  get_rank(access_token){
+    if (access_token != '')
+    {
+      // 获取user.rank
+      wx.request({
+        url: 'https://www.sandian.xyz/wx/rank',
+        header: {
+          'Authorization': 'Bearer ' + access_token // 默认值
+        },
+        method: 'POST',
+        success(res) {
+          if (res.data.code == 200)
+            wx.setStorageSync('rank', res.data.rank)
+        }
+      })
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  custom_login(eid) {
+    wx.request({
+      method: 'POST',
+      url: 'https://www.sandian.xyz/user/get_access_token',
+      data:{
+        eid: eid,
+        device: 1
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success (res){
+        if (res.data.code == 200)
+          wx.setStorageSync('access_token', res.data.access_token)
+      },
+      fail (res){
+        wx.showToast({
+          title: '网络差',
+        })
+      }
+    })
   }
 })
