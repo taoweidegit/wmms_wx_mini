@@ -32,9 +32,11 @@ Page({
               })
               let app = getApp()
               app.globalData.user_rank = result.rank
-              wx.redirectTo({
-                url: '../login_success/login_success',
-              })
+              setTimeout(function(){ 
+                wx.redirectTo({
+                  url: '../login_success/login_success',
+                })
+              }, 1500); 
             }
             else if (result.data.code == 404)
               wx.showToast({
