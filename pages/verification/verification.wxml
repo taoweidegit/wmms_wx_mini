@@ -1,2 +1,28 @@
 <!--pages/verification/verification.wxml-->
-<text>pages/verification/verification.wxml</text>
+<text>入库</text>
+<view class="container">
+  <block>
+    <view class='card b-shadow' bindtap='toggleBtn' id="1">
+      <view class='nearCard-fl'>
+        <view>名称：
+          <text class='c-green'>压力表</text>
+        </view>
+        <view>型号：
+          <text class='c-green'>Y-150B</text>
+        </view>
+        <view>厂家：
+          <text class='c-green'>南京雷易</text>
+        </view>
+        <view>数量：
+          <text class='c-green'>2</text>
+        </view>
+      </view>
+      <view class='nearCard-fr'>
+        <image src="https://img.zcool.cn/community/011aad554be56f000001bf72c38864.jpg@1280w_1l_2o_100sh.jpg"></image>
+      </view>
+      <view class='down clearfix {{uhide==item.id?"":"hidden"}}'>
+        <!-- <view class='feedBack'>意见反馈</view> -->
+      </view>
+    </view>
+  </block>
+</view>

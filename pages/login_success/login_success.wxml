@@ -1,2 +1,12 @@
 <!--pages/login_success/login_success.wxml-->
 <text class="page_title">导航</text>
+<scroll-view>
+  <block wx:if="{{rank <= 1}}">
+    <view>
+      <button class="btn" type="primary" bind:tap="instock">入库</button>
+      <button class="btn" type="primary">出库</button>
+      <button class="btn" type="primary">移动备件位置</button>
+      <button class="btn" type="primary">备件查询</button>
+    </view>
+  </block>
+</scroll-view>

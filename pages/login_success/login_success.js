@@ -1,33 +1,11 @@
 // pages/login_success/login_success.js
 Page({
   data: {
-    
   },
   onLoad(options) {
-    this.custom_login(options.eid)
-    let access_token = wx.getStorageSync('access_token')
-    this.get_rank(access_token)
-    let rank = wx.getStorageSync('rank')
-    console.log(rank)
+    this.get_rank(options.eid)
   },
-  get_rank(access_token){
-    if (access_token != '')
-    {
-      // 获取user.rank
-      wx.request({
-        url: 'https://www.sandian.xyz/wx/rank',
-        header: {
-          'Authorization': 'Bearer ' + access_token // 默认值
-        },
-        method: 'POST',
-        success(res) {
-          if (res.data.code == 200)
-            wx.setStorageSync('rank', res.data.rank)
-        }
-      })
-    }
-  },
-  custom_login(eid) {
+  get_rank(eid) {
     wx.request({
       method: 'POST',
       url: 'https://www.sandian.xyz/user/get_access_token',
@@ -35,18 +13,43 @@ Page({
         eid: eid,
         device: 1
       },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success (res){
+      success: (res) => {
         if (res.data.code == 200)
-          wx.setStorageSync('access_token', res.data.access_token)
+        {
+          wx.setStorage({
+            key: 'access_token',
+            data: res.data.access_token,
+          })
+          wx.request({
+            url: 'https://www.sandian.xyz/wx/rank',
+            header: {
+              'Authorization': 'Bearer ' + res.data.access_token // 默认值
+            },
+            method: 'POST',
+            success:(res) => {
+              if (res.data.code == 200)
+                this.setData({
+                  'rank': res.data.rank
+                })
+            }
+          });
+        }
       },
       fail (res){
         wx.showToast({
           title: '网络差',
         })
       }
-    })
+    });
+  },
+  instock(){
+    wx.getStorage({
+      key: 'access_token',
+      success (res) {
+        wx.navigateTo({
+          url: '../verification/verification?access_token=' + res.data,
+        });
+      }
+    });
   }
 })
