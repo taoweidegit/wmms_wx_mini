@@ -14,12 +14,11 @@ Page({
     console.log(wx.getStorageSync('in_stock_list'))
   },
   get_unverficated_ware_list(){
-    var that = this
     wx.request({
       url: 'https://www.sandian.xyz/stock/instock/query',
       method: 'GET',
-      success (res){
-        that.setData({
+      success: (res) => {
+        this.setData({
           'in_stock_list': res.data
         })
       }

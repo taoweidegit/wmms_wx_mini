@@ -6,15 +6,16 @@
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  /* margin-bottom: 30rpx; */
   margin-top: -60px;
 }
 
 .card {
   width: 95%;
   background-color: #fff;
-  /* margin: 20rpx auto 0; */
+  margin: 10px auto 0;
   border-radius: 20rpx;
+  position: relative;
+  bottom: 20px;
 }
 
 .b-shadow {
