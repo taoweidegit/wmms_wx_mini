@@ -17,7 +17,7 @@
         </view>
       </view>
       <view class='nearCard-fr'>
-        <image src="https://img.zcool.cn/community/011aad554be56f000001bf72c38864.jpg@1280w_1l_2o_100sh.jpg"></image>
+        <image src="../../images/拍摄.png"></image>
       </view>
       <view class='down clearfix {{uhide==item.id?"":"hidden"}}'>
         <view class='feedBack'>意见反馈</view>

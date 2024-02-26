@@ -1,4 +1,9 @@
 /* pages/verification/verification.wxss */
+page {
+  min-height: 100%;
+  background-color: #e4e4e4;
+}
+
 .container {
   height: 100%;
   display: flex;
@@ -30,14 +35,15 @@
 }
 
 .nearCard-fr image {
-  width: 200rpx;
-  height: 200rpx;
-  padding: 8% 15%;
+  width: 190rpx;
+  height: 190rpx;
+  padding: 8% 20%;
   margin-top: -100px;
 }
 
 .c-green{
-   font-size: 30px;
+   font-size: 15px;
+   color: #0eda18;
 }
 
 .nearCard-fl {
@@ -45,11 +51,7 @@
   width: 50%;
   margin-left: 10%;
   margin-top: 15rpx;
-  color: #999;
-}
-
-.nearCard-fl text {
-  font-size: 22rpx;
+  color: black;
 }
 
 /* .down {
