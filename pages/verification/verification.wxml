@@ -13,15 +13,16 @@
           <text class='c-green'>南京雷易</text>
         </view>
         <view>数量：
-          <text class='c-green'>2</text>
+          <!-- <text class='c-green'>2</text> -->
+          <input class="weui-input" type="number" auto-focus value="2" placeholder="备件数量" />
         </view>
       </view>
       <view class='nearCard-fr'>
         <image src="../../images/拍摄.png"></image>
       </view>
-      <view class='down clearfix {{uhide==item.id?"":"hidden"}}'>
+      <!-- <view class='down clearfix {{uhide==item.id?"":"hidden"}}'>
         <view class='feedBack'>意见反馈</view>
-      </view>
+      </view> -->
     </view>
   </block>
 </view>

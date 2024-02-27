@@ -21,6 +21,7 @@ page {
   border-radius: 20rpx;
   position: relative;
   bottom: 20px;
+  height: 110px;
 }
 
 .b-shadow {
@@ -35,15 +36,17 @@ page {
 }
 
 .nearCard-fr image {
-  width: 190rpx;
-  height: 190rpx;
-  padding: 8% 20%;
-  margin-top: -100px;
+  width: 180rpx;
+  height: 180rpx;
+  padding: 8% 24%;
+  margin-top: -120px;
+  position: relative;
+  bottom: 30px;
 }
 
 .c-green{
    font-size: 15px;
-   color: #0eda18;
+   color: black;
 }
 
 .nearCard-fl {
@@ -52,6 +55,17 @@ page {
   margin-left: 10%;
   margin-top: 15rpx;
   color: black;
+}
+
+.weui-input{
+  /* background-color: black; */
+  width: 80px;
+  position: relative;
+  left: 40px;
+  bottom: 20px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
 /* .down {
