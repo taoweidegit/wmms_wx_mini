@@ -63,9 +63,10 @@ page {
   position: relative;
   left: 40px;
   bottom: 20px;
-  display: flex;
+  /* display: flex; */
   text-align: center;
-  justify-content: center;
+  font-size: 18px;
+  /* justify-content: center; */
 }
 
 /* .down {
